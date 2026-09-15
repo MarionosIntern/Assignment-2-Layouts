@@ -1,0 +1,41 @@
+
+/* HEADER */
+#flex-header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 15px;
+    padding-bottom: 5px;
+    border: 6px solid #0000ff;
+   
+   
+}
+#flex-logo{
+    width: 80px;
+    height: 80px;
+    border: 5px solid blue;
+    border-radius: 50%;
+
+}
+
+/* NAV */
+nav{
+    border: 5px solid black;
+}
+
+/* HERO */
+#hero-section{
+    border: 5px solid blue;
+    padding: 10px;
+}
+#main-img{
+    width: 500px;
+    height: 250px;
+}
+
+/* UPCOMING-EVENTS */
+
+
+
+
