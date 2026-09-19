@@ -22,8 +22,8 @@
     
     <nav>
         <ul class = "nav-links">
-            <li> <a href ="index.html">Home</a></li>
-            <li><a href = "#upcoming-events">Upcoming Events</a></li>
+            <li><a href ="index.html">Home</a></li>
+            <li><a href = "#upcoming-events-grid">Upcoming Events</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="event.html">Featured Event Page</a></li>
         </ul>
@@ -38,17 +38,92 @@
                 events or our special featured event. 
                 I hope to see you there!
             </p>
-            <h3>Check out our events here! <a href="#upcoming-events" id = "event-button"> Events</a></h3>
+            <h3>Check out our events here! <a href="#upcoming-events-grid" id = "event-button"> Events</a></h3>
             <img id="main-img" src="images/home-image.jpg" alt = "uncg-main">
         </article>
     </main>
 
-    <main id = "events-section">
+    <h1>Upcoming Events</h1>
+    <main id = "upcoming-events-grid">
+        <article class = "grid-item" id = "grid-item1">
+            <img class = "grid-img" src="images/event-img1.jpg" alt="uncg fair">
+            <ul>
+                <li>Annual UNCG Fair</li>
+                <li>September 12th, 2026. Opens at 12pm</li>
+                <li>EUC Lawn</li>
+                <li>Public Fair</li>
+                <li>A fun event for students and locals to enjoy fair food and rides.</li>
+            </ul>
+        </article>
+
+        <article class = "grid-item" id = "grid-item2">
+            <img class = "grid-img" src="images/event-img2.jpeg" alt="spartan olympics">
+            <ul>
+                <li>Spartan Olympics</li>
+                <li>November 22nd, 2026. Starts at 2pm</li>
+                <li>Kaplan Center</li>
+                <li>Sports Competition</li>
+                <li>A chance for UNCG's best athletes to compete against each other for glory and prizes.</li>
+            </ul>
+        </article>
+
+        <article class = "grid-item" id = "grid-item3">
+            <img class = "grid-img" src="images/event-img3.jpg" alt="christmas gathering">
+            <ul>
+                <li>Christmas Gathering</li>
+                <li>December 1st, 2026. Starts at 11am</li>
+                <li>Moron Commons</li>
+                <li>Holiday event</li>
+                <li>A moment to gather as a community to celebrate each other with holiday joy.</li>
+            </ul>
+        </article>
+
+        <article class = "grid-item" id = "grid-item4">
+            <img class = "grid-img" src="images/event-img4.gif" alt="uncg talent show">
+            <ul>
+                <li>UNCG Talent Show</li>
+                <li>Feburary 13th, 2027. Starts at 7pm</li>
+                <li>UNCG Auditorium</li>
+                <li>Talent competition</li>
+                <li>An opportunity to show the campus your hidden abilities and have some fun.</li>
+            </ul>
+        </article>
+        
+        <article class = "grid-item" id = "grid-item5">
+            <img class = "grid-img" src="images/event-img5.jpg" alt="spyro bonfire">
+            <ul>
+                <li>Spyro Bonfire</li>
+                <li>April 3rd, 2027. Starts at 8pm</li>
+                <li>EUC Lawn</li>
+                <li>Gathering</li>
+                <li>A time to remember our accomplishments and community over a big bonfire.</li>
+            </ul>
+        </article>
     </main>
 
-    <section></section>
+    <section id = "about">
+        <h1>About</h1>
+        <p>The Campus Event Guide was created to help students, faculty, and the greater Greensboro
+            community stay connected to everything happening at UNCG. From lively fairs to sport
+            holiday gatherings, our campus calendar is full of opportunities to get involved, meet new people, 
+            and make the most of your time as a Spartan. We're committed to keeping this page updated
+            with accurate dates, times, and locations of upcoming events so you can plan ahead with 
+            confidence. Have an event you think belongs here? Reach out and let us know! GO SPARTANS!
+        </p>
+        <h3>Services</h3>
+        <ul>
+            <li>Centralized Community Calendar</li>
+            <li>Featured Event Spotlight</li>
+            <li>Event Details</li>
+        </ul>
+    </section>
 
-    <footer></footer>
+    <footer class = "flex-footer">
+        <p>Contact Us: campusevents@uncg.edu</p>
+        <p>Special Event: <a class = "footer-links" href="event.html"> Event Spotlight</a></p>
+        <p>Top of Page: <a class = "footer-links" href="#flex-header">Up you go!</a></p>
+        <p>&copy; Campus Event Guide, University of North Carolina at Greensboro. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
