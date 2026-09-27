@@ -1,6 +1,6 @@
 
+// A function to create a button for each event and check whether that event is saved or not
 function createButton(summarySection){
-
     const parentList = document.querySelectorAll(".grid-item");
     for(let index = 0; index < parentList.length; index++){
         const parent = parentList[index];
@@ -12,7 +12,7 @@ function createButton(summarySection){
         button.addEventListener('click', eventCheck);
         
         function eventCheck(){
-            const isSaved = parent.classList.contains("saved-event");
+            const isSaved = parent.classList.contains("save-event");
             if(!isSaved){
                 saveEvent(parent, button, summarySection)
             }else{
@@ -22,16 +22,30 @@ function createButton(summarySection){
     }
 }
 
+// A function that returns event details to later be displayed in the summary section
+function getEventDetails(card){
+    const getDetails = card.querySelectorAll("ul li");
+    
+    return{
+        name: getDetails[0].textContent, 
+        dateTime: getDetails[1].textContent, 
+        location: getDetails[2].textContent
+    } ;
+}
+
+// A function to create a new list of events once "save-event-button" is clicked
  function saveEvent(card, button, summarySection){
             card.classList.add("save-event");
             button.textContent = "Remove Event";
+            button.classList.add("remove-btn");
 
             card.style.border = "5px dashed blue";
             
             const details = getEventDetails(card);
             const list = summarySection.querySelector(".saved-events-list");
+            list.style.border = "5px dashed blue";
             
-            const listItem = document.querySelectorAll("li");
+            const listItem = document.createElement("li");
             listItem.classList.add("list-item");
 
             const nameItem = document.createElement("strong");
@@ -53,13 +67,25 @@ function createButton(summarySection){
             
 }      
 
-
+// A function to dynamically remove the events once they are saved 
 function removeEvent(card, button, summarySection){
-    card.classList.remove("saved-event");
+    card.classList.remove("save-event");
+    button.classList.remove("remove-btn");
     button.textContent = "Save Event";
+    card.style.border = "";
+    const list = summarySection.querySelector(".saved-events-list");
+    list.style.border = "";
+
+    if(card.savedListItem){
+        card.savedListItem.remove();
+        card.savedListItem = null;
+    }
+
+    updateEmptyMsg(summarySection);
     
 }
 
+// A function to update the empty message before any events are saved and when we remove all events that were saved
 function updateEmptyMsg(summarySection){
     const list = summarySection.querySelector(".saved-events-list");
     const emptyMsg = summarySection.querySelector(".empty-event-msg");
@@ -70,6 +96,7 @@ function updateEmptyMsg(summarySection){
         }
 }
 
+// A function that creates the saved event summary section 
 function createSummarySection(){
     const about  = document.querySelector("#about");
     const section = document.createElement("section");
@@ -89,27 +116,17 @@ function createSummarySection(){
     list.classList.add("saved-events-list");
     section.appendChild(list);
 
+    return section;
+
    
 }
 
-
-
-function getEventDetails(card){
-    const getDetails = card.querySelectorAll(".grid-item.ul li");
-    return{
-        name: getDetails[0].textContent, 
-        dateTime: getDetails[1].textContent, 
-        location: getDetails[2].textContent
-    } ;
-}
-
+// A function to capture the series of events happening once the page is loaded
 function newSection(){
     const summarySection = createSummarySection();
     createButton(summarySection);
     updateEmptyMsg(summarySection);
 }
-
-
 
 
 window.addEventListener('load', newSection);
